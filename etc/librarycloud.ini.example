@@ -1,0 +1,10 @@
+; The location of our documentation (we send users 
+; here when an error bubbles up)
+[doc]
+lc_doc_loc = http://librarycloud.org/api/doc
+
+; We want to accommodate multiple resource types, each with
+; their own config. Let's handle that here.
+[resource_types]
+item = etc/item_config.ini.example
+event = etc/event_config.ini.example

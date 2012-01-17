@@ -1,0 +1,54 @@
+; Connecting to Solr
+solr_host = localhost
+solr_port = 8080
+solr_path = /solr/item
+
+; Valid fields
+; This should be the list of all valid fields in the Solr instance
+; (We do this so that we can print error messages)
+valid_params[] = id
+valid_params[] = title
+valid_params[] = title_sort
+valid_params[] = creator
+valid_params[] = publisher
+valid_params[] = date
+valid_params[] = format
+valid_params[] = language
+valid_params[] = page_count
+valid_params[] = height
+valid_params[] = subject
+valid_params[] = description
+valid_params[] = call_num
+valid_params[] = id_inst
+valid_params[] = id_isbn
+valid_params[] = id_lccn
+valid_params[] = id_oclc
+valid_params[] = content_link
+valid_params[] = relation
+valid_params[] = rights
+valid_params[] = checkouts
+valid_params[] = data_source
+valid_params[] = dataset_tag
+valid_params[] = title_exact
+valid_params[] = creator_exact
+valid_params[] = subject_exact
+valid_params[] = title_keyword
+valid_params[] = creator_keyword
+valid_params[] = subject_keyword
+valid_params[] = note_keyword
+valid_params[] = keyword
+
+;Multi-valued fields
+mulval_fields[] = creator
+mulval_fields[] = description
+mulval_fields[] = subject
+mulval_fields[] = call_num
+mulval_fields[] = id_isbn
+mulval_fields[] = content_link
+
+; Numeric fields:
+; (These are things we can do Solr stats on)
+numeric_fields[] = checkouts
+
+; Default fields:
+default_sort_field = checkouts

@@ -1,0 +1,18 @@
+; Connecting to Solr
+solr_host = localhost
+solr_port = 8080
+solr_path = /solr/event
+
+; Event fields:
+valid_params[] = event_type
+valid_params[] = library
+valid_params[] = item_id
+valid_params[] = date
+valid_params[] = id
+
+; Numeric fields:
+; (These are things we can do Solr stats on)
+numeric_fields[] = date
+
+; Default fields:
+default_sort_field = date

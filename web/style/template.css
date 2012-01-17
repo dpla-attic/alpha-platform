@@ -1,0 +1,235 @@
+/* -------------------------------------------------------------- 
+   css reset
+-------------------------------------------------------------- */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td
+	{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+ol,ul {
+	list-style-image: initial;
+	list-style-position: initial;
+	list-style-type: none;
+}
+
+/* -------------------------------------------------------------- 
+   end reset  
+-------------------------------------------------------------- */
+h1 {
+	clear:both;
+	font-size: 2em;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:#333;
+}
+
+h2 {
+	font-size: 1.5em;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:#09f;
+	margin-top:-0em;
+}
+
+h2 a{
+	text-decoration: none;
+	color:#09f;
+}
+
+body {
+	font-size: 62.5%; /* setting font size to 62.5% sets 1em = 10px */
+	font-family: Helvetica, Arial, sans-serif;
+	min-width:820px;
+}
+
+.container,.header {
+	margin: 20px 40px  0px 40px;
+	padding: 1em;
+	border-radius: .1em;
+	-moz-border-radius: .1em;
+	-webkit-border-radius: .1em;
+	box-shadow: 0px 0px 3px #bbb;
+	-moz-box-shadow: 0px 0px 3px #bbb;
+	-webkit-box-shadow: 0px 0px 3px #bbb;
+	border: 1px solid #f9f9f9;
+}
+
+.stamp{
+	float:right;
+	margin:0;
+	padding:0;
+}
+
+.header{
+	margin-top: 30px;
+}
+
+.footer{
+	margin-top: 00px;
+}
+.header {
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+
+.footer {
+	margin: 10px 40px;
+	text-align: right;
+}
+
+.footer,.footer a {
+	color: #999;
+	text-decoration: none;
+}
+
+.title {
+	float: left;
+	font-size: 1.2em; /* = 12px */
+}
+
+.sidebar,.main {
+	position:relative;
+	float: left;
+	font-size: 1.2em; /* = 12px */
+	width: 22%;
+	border-radius: .2em; /* = 1px */
+	-moz-border-radius: .2em;
+	-webkit-border-radius: .2em;
+	border: 0px solid #eee;
+	margin-right: 1%;
+}
+
+.main {
+	float: right;
+	width: 76%;
+	margin: 0;
+}
+
+.content {
+	color: #333;
+}
+
+.navigation {
+	float: right;
+	margin-right: 60px;
+	padding: .3em .5em 0 0;
+}
+
+.navigation li {
+	display: inline;
+	list-style-type: none;
+	font-size: 1.2em; /* = 12px */
+}
+
+/* -------------------------------------------------------------- 
+   correcting float issues   
+-------------------------------------------------------------- */
+.button, .searchButton  {
+	padding: .2em .3em .15em .3em;
+	border-radius: .2em;
+	-moz-border-radius: .2em;
+	-webkit-border-radius: .2em;
+	text-decoration: none;
+	background: #eef8ff;
+	color: #09f;
+	border: 1px solid #ccc;
+	cursor:pointer;
+}
+
+.button:hover, .searchButton:hover {
+	background: #fff;
+}
+
+.button:active, .searchButton:active {
+	background: #06a;
+	color: #fff;
+	border: 1px solid #aaa;
+}
+
+/* -------------------------------------------------------------- 
+   correcting float issues   
+-------------------------------------------------------------- */
+.group:after { /* correcting the float issue */
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+* html .group {
+	zoom: 1;
+}  /* IE6 */
+*:first-child+html .group {
+	zoom: 1;
+}  /* IE7 */
+/* -------------------------------------------------------------- 
+   end float correction   
+-------------------------------------------------------------- */
+/* -------------------------------------------------------------- 
+   api request specific styling
+-------------------------------------------------------------- */
+.page_title {
+	margin-top: 0px;
+}
+
+.link {
+	text-decoration: none;
+	color: #09f;
+}
+
+.request_response {
+	background: #f4f4f4;
+	border: 1px solid #ccc;
+	color: #000;
+	font-size: 13px;
+	height:520px;
+	margin: 0;
+	padding: 10px;
+	overflow: auto;
+	width: 97%;
+}
+
+#request {
+	height: 40px;
+}
+
+.search_pair {
+	margin: 8px 0;
+	padding: 4px 0;
+}
+
+.form_element {
+	margin-top: 5px;
+}
+
+.add_filter {
+	cursor: pointer;
+	color: #0099FF;
+	font-size: 11px;
+}
+
+.required_field {
+	background-color: #CC3333;	
+}
+
+select, input {
+	border: solid 1px #BBB;
+	background-color: #f4f4f4;
+	position: relative;
+	text-decoration: none;
+	color: black;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+/* -------------------------------------------------------------- 
+   end api request specific styling   
+-------------------------------------------------------------- */

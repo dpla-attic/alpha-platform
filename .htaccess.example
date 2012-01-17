@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule (v[^\/]+)\/api librarycloud.$1/api/index.php [NC]
+RewriteRule (v[^\/]+)\/web librarycloud.$1/web/query_builder.html [NC]
