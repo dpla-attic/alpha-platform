@@ -58,7 +58,8 @@ class http_request {
      * http://host.com/librarycloud/v.3/api/item?otherparams=value
      */
     function build_action_params() {
-        preg_match('/\/[^\/]+\/api\/([^?]*)/', $this->uri, $matches);
+        //preg_match('/\/[^\/]+\/api\/([^?]*)/', $this->uri, $matches);
+        preg_match('/\/[^\/]+\/([^?]*)/', $this->uri, $matches);
         $path_params = explode('/', $matches[1]);
 
         // This is probably item or event
