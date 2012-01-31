@@ -1,2 +1,0 @@
-RewriteEngine On
-RewriteRule query_builder query_builder.html
