@@ -4,41 +4,39 @@ $(document).ready(function() {
 var config = (function () { 
     var my = {};
 	
-    my.request_location = 'http://localhost/librarycloud/api/v.2/';
+    my.request_location = 'http://api.dp.la/dev/api/';
     my.key = 'd41d8cd98f00b204e980';
     
     my.item_options = {
     		'keyword' : 'Keyword Anywhere',
-    		'title_exact' : 'Title Exact', 
-    		'creator_exact' : 'Creator Exact',
-    		'desc_subject_exact' : 'Subject Heading Exact',
+//    		'title_exact' : 'Title Exact', 
+    		'creator' : 'Creator Exact',
     		'title_keyword' : 'Title Keyword',
     		'creator_keyword' : 'Creator Keyword',
-    		'desc_subject_keyword' : 'Subject Heading Keyword',
+    		'subject_keyword' : 'Subject Heading Keyword',
     		'id_isbn' : 'ISBN Exact',
     		'id_oclc' : 'OCLC ID Exact',
     		'id_lccn' : 'LCCN ID Exact',
-    		'id' : 'LibraryCloud ID Exact',
-    		'language' : 'Language Exact',
-    		'total_score' : 'Total Score'
+    		'id' : 'LibraryCloud ID Exact'
+//    		'language' : 'Language Exact',
+//    		'total_score' : 'Total Score'
     };
     
     my.item_sort_options = {
-    		'total_score' : 'Total Score',
-    		'title_exact' : 'Title Exact', 
-    		'creator_exact' : 'Creator Exact',
-    		'desc_subject_exact' : 'Subject Heading Exact',
+//    		'total_score' : 'Total Score',
+//    		'title_exact' : 'Title Exact', 
+    		'creator' : 'Creator Exact',
+    		'subject_keyword' : 'Subject Heading Exact',
     		'id_isbn' : 'ISBN Exact',
     		'id_oclc' : 'OCLC ID Exact',
-    		'id_lccn' : 'LCCN ID Exact'
+    		'id_lccn' : 'LCCN ID Exact',
+			'checkouts': 'checkouts'
     };
     
     my.item_facet_options = {
     		'language' : 'Language Exact',
     		'creator_exact' : 'Creator',
-    		'desc_subject_exact' : 'Subject Heading',
-    		'total_score' : 'Total Score',
-    		'pub_date_range' : 'Publication Date Range'
+    		'subject_keyword' : 'Subject Heading'
     };
     
     my.event_options = {
@@ -131,9 +129,9 @@ var exec_form = (function () {
     	$('#lc_response').val( 'Waiting for a response from LibraryCloud');
 
     	// Write a placeholder for the key (###)
-    	$('#request').html(request_string + '###');
+    	$('#request').html(request_string);
     	
-    	$.getJSON(request_string + config.key,
+    	$.getJSON(request_string,
 			function(data) {
     			$('#lc_response').val( FormatJSON(data, '  '));
 			});
@@ -173,7 +171,7 @@ var exec_form = (function () {
 			request_string += '&' + filter_string;
 		}
 				
-		make_request(request_string + '&key=');
+		make_request(request_string);
 		
 	}
 
@@ -182,7 +180,7 @@ var exec_form = (function () {
 		var request_string = get_base();
 		request_string += $('#direct_access').val();
 		
-		make_request(request_string + '?key=');
+		make_request(request_string);
 	}
 
 	// Controller to provide one call into our draw method
