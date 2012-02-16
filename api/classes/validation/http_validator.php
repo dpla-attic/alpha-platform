@@ -50,11 +50,13 @@ class http_validator {
         // Validate search types (the field to search on)
         if (!empty($this->http_request->params['search_type'])){
             $search_type = $this->http_request->params['search_type'][0];
-            if (!empty($search_type) && !in_array($search_type, $valid_fields)) {
-                throw new \Exception('Incorrect search type specified, ' .
-                    '  -->  ' . $this->http_request->params['search_type'][0] . '  <--  See ' .
-                    $this->lc_config['lc_doc_loc'] . ' for documention on searh types.');
-            }
+//                throw new \Exception('Incorrect search type specified, ' .
+//                    '  -->  ' . $this->http_request->params['search_type'][0] . '  <--  See ' .
+//                    $this->lc_config['lc_doc_loc'] . ' for documention on searh types.');
+
+
+//            if (!empty($search_type) && !in_array($search_type, $valid_fields)) {
+//            }
         }
 
         // Validate facet fields

@@ -43,11 +43,11 @@ class solr_connector {
         try {
             $solr = new \Apache_Solr_Service($host, $port, $path);
             $this->solr_results = $solr->search($this->solr_data_store_request->query, $this->solr_data_store_request->start, $this->solr_data_store_request->rows, $this->solr_data_store_request->params);
+
         }
         catch (\Exception $e) {
-            throw new \Exception('An issue has occured with the backend datastore. ' .
-                'See ' . $this->lc_config['lc_doc_loc'] . ' for information on how to report 
-                outages.');
+            throw new \Exception('This is a bummer, man. An error was encountered while processing your request. ' .
+            'See ' . $this->lc_config['lc_doc_loc'] . ' for examples of well formed requests.');
         }
     }
 }

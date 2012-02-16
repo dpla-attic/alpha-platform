@@ -75,21 +75,16 @@ class solr_request_translator {
                 $query_field_value = urldecode($this->http_request->params['query'][0]);
             }
 
-            // If we have a range query we don't want to lower case the [ TO ]
-            // TODO: Should we always be lowercasing? Seems like not always...
-            $pattern = '/^\[.+ TO/';
-            if (!preg_match($pattern, $query_field_value)) {
-                $query_field_value = strtolower($query_field_value);
+            $solr_query_string = $query_field_key . ':';
+            
+            if ($query_field_value != '*') {
+                $solr_query_string = $solr_query_string . solr\utils::escape_solr_value($query_field_value);
+            } else {
+                $solr_query_string = $solr_query_string . $query_field_value;
             }
 
-            // If we have an exact a.k.a. left anchored search, escape the whitespace
-            // and toss a * on the end
-            if (preg_match("/exact$/i", $query_field_key)) {
-                $query_field_value = utils\escape_solr_value($query_field_value);
-                $query_field_value .= '*';
-            }
+            $this->solr_data_store_request->query = $solr_query_string;
 
-            $this->solr_data_store_request->query = $query_field_key . ':' . $query_field_value;
             $this->parse_filter();
             $this->parse_commons_params();
             $this->parse_facet();
