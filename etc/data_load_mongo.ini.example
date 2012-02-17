@@ -1,0 +1,9 @@
+; This is where we get our load data
+[data_load]
+mongo_connection = localhost:27017
+mongo_db = test
+mongo_collection = some_collection
+
+solr_host = localhost
+solr_port = 8080
+solr_path = /solr/item

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="item" version=".01">
+<schema name="item" version=".02">
 
 	<types>
 		<!-- field type definitions. The "name" attribute is
@@ -403,19 +403,6 @@ any data added to them will be ignored outright.  -->
 	
 	<field name="resource_type" type="string" indexed="true" stored="true"/>
 
-
-	<!-- Exact searching (let's do some lowercasing here) -->
-	<field name="title_exact" type="lowercase" indexed="true" stored="false" multiValued="true"/>
-	<copyField source="title" dest="title_exact"/>
-	<copyField source="title_sort" dest="title_exact"/>
-
-	<field name="creator_exact" type="lowercase" indexed="true" stored="false" multiValued="true"/>
-	<copyField source="creator" dest="creator_exact"/>
-
-	<field name="subject_exact" type="lowercase" indexed="true" stored="false" multiValued="true"/>
-	<copyField source="subject" dest="subject_exact"/>
-
-
 	<!-- Keyword searching (normalize text, stem it, etc. here)-->
 	<field name="title_keyword" type="text" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
 	<copyField source="title" dest="title_keyword"/>
@@ -428,6 +415,8 @@ any data added to them will be ignored outright.  -->
 
 	<field name="description_keyword" type="text_basic" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
 	<copyField source="description" dest="description_keyword"/>
+
+	<dynamicField name="dark_*"  type="string"  indexed="true"  stored="true"/>
 
 
 	<!-- The kitchen sink (copy everything to the keyword field for one-field searching)-->
@@ -448,6 +437,7 @@ any data added to them will be ignored outright.  -->
 	<copyField source="id_isbn" dest="keyword"/>
 	<copyField source="id_lccn" dest="keyword"/>
 	<copyField source="id_oclc" dest="keyword"/>
+	<copyField source="*_supplied" dest="keyword"/>
 	<copyField source="content_link" dest="keyword"/>
 </fields>
 
