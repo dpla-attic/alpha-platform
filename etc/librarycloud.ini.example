@@ -1,7 +1,7 @@
 ; The location of our documentation (we send users 
 ; here when an error bubbles up)
 [doc]
-lc_doc_loc = http://librarycloud.org/api/doc
+lc_doc_loc = http://librarycloud.org/api
 
 ; We want to accommodate multiple resource types, each with
 ; their own config. Let's handle that here.
