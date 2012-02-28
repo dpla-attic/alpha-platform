@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="item" version=".02">
+<schema name="item" version="1.4">
 
 	<types>
 		<!-- field type definitions. The "name" attribute is
