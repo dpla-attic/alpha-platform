@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="item" version="1.4">
+<schema name="item" version=".2">
 
 	<types>
 		<!-- field type definitions. The "name" attribute is
@@ -416,7 +416,7 @@ any data added to them will be ignored outright.  -->
 	<field name="description_keyword" type="text_basic" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
 	<copyField source="description" dest="description_keyword"/>
 
-	<dynamicField name="dark_*"  type="string"  indexed="true"  stored="true"/>
+	<dynamicField name="*"  type="string"  indexed="true"  stored="true"/>
 
 
 	<!-- The kitchen sink (copy everything to the keyword field for one-field searching)-->
