@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="item" version=".2">
+<schema name="item" version=".03">
 
 	<types>
 		<!-- field type definitions. The "name" attribute is
@@ -369,81 +369,62 @@ any data added to them will be ignored outright.  -->
 
 
 <fields>
-	<field name="id" type="string" indexed="true" stored="true" required="true" />
+	<field name="dpla.id" type="string" indexed="true" stored="true" required="true" />
 
 	<!-- Original fields (text as it was supplied) -->
-	<field name="title" type="string" indexed="true" stored="true"/>
-	<field name="title_sort" type="string" indexed="true" stored="false"/>
-	<field name="creator" type="string" indexed="true" stored="true" multiValued="true"/>
-	<field name="publisher" type="string" indexed="true" stored="true"/>
-	<field name="date" type="string" indexed="true" stored="true"/>
-	<field name="format" type="string" indexed="true" stored="true"/>
-	<field name="language" type="string" indexed="true" stored="true"/>
-	<field name="page_count" type="string" indexed="true" stored="true"/>
-	<field name="height" type="string" indexed="true" stored="true"/>
-	<field name="description" type="string" indexed="true" stored="true" multiValued="true"/>
+	<field name="dpla.title" type="string" indexed="true" stored="true"/>
+	<field name="dpla.creator" type="string" indexed="true" stored="true" multiValued="true"/>
+	<field name="dpla.publisher" type="string" indexed="true" stored="true"/>
+	<field name="dpla.date" type="string" indexed="true" stored="true"/>
+	<field name="dpla.format" type="string" indexed="true" stored="true"/>
+	<field name="dpla.language" type="string" indexed="true" stored="true"/>
+	<field name="dpla.page_count" type="string" indexed="true" stored="true"/>
+	<field name="dpla.height" type="string" indexed="true" stored="true"/>
+	<field name="dpla.length" type="string" indexed="true" stored="true"/>
+	<field name="dpla.description" type="string" indexed="true" stored="true" multiValued="true"/>
 
-	<field name="subject" type="string" indexed="true" stored="true" multiValued="true"/>
-	<field name="call_num" type="string" indexed="true" stored="true" multiValued="true"/>
+	<field name="dpla.subject" type="string" indexed="true" stored="true" multiValued="true"/>
+	<field name="dpla.call_num" type="string" indexed="true" stored="true" multiValued="true"/>
 
-	<field name="id_inst" type="string" indexed="true" stored="true"/>
-	<field name="id_isbn" type="string" indexed="true" stored="true"  multiValued="true"/>
-	<field name="id_lccn" type="string" indexed="true" stored="true"/>
-	<field name="id_oclc" type="string" indexed="true" stored="true"/>
+	<field name="dpla.id_inst" type="string" indexed="true" stored="true"/>
+	<field name="dpla.id_isbn" type="string" indexed="true" stored="true"  multiValued="true"/>
+	<field name="dpla.id_lccn" type="string" indexed="true" stored="true"/>
+	<field name="dpla.id_oclc" type="string" indexed="true" stored="true"/>
 
-	<field name="content_link" type="string" indexed="true" stored="true" multiValued="true"/>
-	<field name="relation" type="string" indexed="true" stored="true" multiValued="true"/>
+	<field name="dpla.content_link" type="string" indexed="true" stored="true" multiValued="true"/>
+	<field name="dpla.relation" type="string" indexed="true" stored="true" multiValued="true"/>
 	
-	<field name="rights" type="string" indexed="true" stored="true" multiValued="true"/>
+	<field name="dpla.rights" type="string" indexed="true" stored="true" multiValued="true"/>
 
-	<field name="checkouts" type="int" indexed="true" stored="true"/>
+	<field name="dpla.data_source" type="string" indexed="true" stored="true"/>
+	<field name="dpla.dataset_tag" type="string" indexed="true" stored="true"/>
 	
-	<field name="data_source" type="string" indexed="true" stored="true"/>
-	<field name="dataset_tag" type="string" indexed="true" stored="true"/>
-	
-	<field name="resource_type" type="string" indexed="true" stored="true"/>
+	<field name="dpla.resource_type" type="string" indexed="true" stored="true"/>
 
 	<!-- Keyword searching (normalize text, stem it, etc. here)-->
-	<field name="title_keyword" type="text" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
-	<copyField source="title" dest="title_keyword"/>
+	<field name="dpla.title_keyword" type="text" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
+	<copyField source="dpla.title" dest="dpla.title_keyword"/>
 
-	<field name="creator_keyword" type="text_basic" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
-	<copyField source="creator" dest="creator_keyword"/>
+	<field name="dpla.creator_keyword" type="text_basic" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
+	<copyField source="dpla.creator" dest="dpla.creator_keyword"/>
 
-	<field name="subject_keyword" type="text" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
-	<copyField source="subject" dest="subject_keyword"/>
+	<field name="dpla.subject_keyword" type="text" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
+	<copyField source="dpla.subject" dest="dpla.subject_keyword"/>
 
-	<field name="description_keyword" type="text_basic" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
-	<copyField source="description" dest="description_keyword"/>
+	<field name="dpla.description_keyword" type="text_basic" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
+	<copyField source="dpla.description" dest="dpla.description_keyword"/>
 
 	<dynamicField name="*"  type="string"  indexed="true"  stored="true"/>
 
 
 	<!-- The kitchen sink (copy everything to the keyword field for one-field searching)-->
-	<field name="keyword" type="text" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
-	<copyField source="id" dest="keyword"/>
-	<copyField source="title" dest="keyword"/>
-	<copyField source="creator" dest="keyword"/>
-	<copyField source="description" dest="keyword"/>
-	<copyField source="format" dest="keyword"/>
-	<copyField source="language" dest="keyword"/>
-	<copyField source="publisher" dest="keyword"/>
-	<copyField source="date" dest="keyword"/>
-	<copyField source="page_count" dest="keyword"/>
-	<copyField source="height" dest="keyword"/>
-	<copyField source="subject" dest="keyword"/>
-	<copyField source="call_num" dest="keyword"/>
-	<copyField source="id_inst" dest="keyword"/>
-	<copyField source="id_isbn" dest="keyword"/>
-	<copyField source="id_lccn" dest="keyword"/>
-	<copyField source="id_oclc" dest="keyword"/>
-	<copyField source="*_supplied" dest="keyword"/>
-	<copyField source="content_link" dest="keyword"/>
+	<field name="dpla.keyword" type="text" indexed="true" stored="false" multiValued="true" omitNorms="true"/>
+	<copyField source="*" dest="dpla.keyword"/>
 </fields>
 
-<uniqueKey>id</uniqueKey>
+<uniqueKey>dpla.id</uniqueKey>
 
-<defaultSearchField>keyword</defaultSearchField>
+<defaultSearchField>dpla.keyword</defaultSearchField>
 <solrQueryParser defaultOperator="AND"/>
 
 </schema>
