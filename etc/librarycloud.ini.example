@@ -7,4 +7,5 @@ lc_doc_loc = http://librarycloud.org/api
 ; their own config. Let's handle that here.
 [resource_types]
 item = etc/item_config.ini.example
-event = etc/event_config.ini.example
+contributor = etc/contributor_config.ini.example
+;event = etc/event_config.ini.example

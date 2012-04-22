@@ -60,7 +60,7 @@ class solr_request_translator {
 
         // Look ma, we have a direct resource request
         if (!empty($this->http_request->action_params['resource_id'])) {
-            $this->solr_data_store_request->query = 'id:' . $this->http_request->action_params['resource_id'];
+            $this->solr_data_store_request->query = 'dpla.id:' . $this->http_request->action_params['resource_id'];
             $this->parse_commons_params();
             $this->parse_facet();
             $this->parse_stats();

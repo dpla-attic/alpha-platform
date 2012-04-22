@@ -1,0 +1,18 @@
+; Connecting to Solr
+solr_host = localhost
+solr_port = 8080
+solr_path = /solr/contributor
+
+; Valid fields
+; This should be the list of all valid fields in the Solr instance
+; (We do this so that we can print error messages)
+valid_params[] = id
+
+;Multi-valued fields
+mulval_fields[] = url 
+
+; Numeric fields:
+; (These are things we can do Solr stats on)
+
+; Default fields:
+default_sort_field = name 
