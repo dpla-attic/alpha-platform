@@ -242,7 +242,7 @@ function parse_format($document, $format) {
     foreach ($format as $key => $value) {
         foreach ($value as $type => $type_value) {
             if (!empty($type_value) && $type_value != 'NULL' && $type_value != 'n/a') {
-                $document->addField('dpla.date', $type_value);
+                $document->addField('dpla.format', $type_value);
                 //print "\ndpla.format = $type_value \n\n";
             }
         }
