@@ -18,12 +18,12 @@ valid_params[] = dpla.resource_type
 valid_params[] = dpla.dataset_tag
 
 ;Multi-valued fields
-mulval_fields[] = creator
-mulval_fields[] = description
-mulval_fields[] = subject
-mulval_fields[] = call_num
-mulval_fields[] = id_isbn
-mulval_fields[] = content_link
+mulval_fields[] = dpla.creator
+mulval_fields[] = dpla.description
+mulval_fields[] = dpla.subject
+mulval_fields[] = dpla.call_num
+mulval_fields[] = dpla.id_isbn
+mulval_fields[] = dpla.content_link
 
 ; Numeric fields:
 ; (These are things we can do Solr stats on)
