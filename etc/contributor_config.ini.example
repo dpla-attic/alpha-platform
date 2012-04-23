@@ -6,14 +6,15 @@ solr_path = /solr/contributor
 ; Valid fields
 ; This should be the list of all valid fields in the Solr instance
 ; (We do this so that we can print error messages)
+valid_params[] = dpla.url
 valid_params[] = dpla.contributor
+valid_params[] = dpla.dataset_id
+valid_params[] = dpla.location.address.city
+valid_params[] = dpla.location.address.state
+valid_params[] = dpla.location.address.zip
 
 ;Multi-valued fields
 mulval_fields[] = dpla.url
-mulval_fields[] = dpla.dataset_id
-mulval_fields[] = dpla.location.address.city
-mulval_fields[] = dpla.location.address.state
-mulval_fields[] = dpla.location.address.zip
 
 ; Numeric fields:
 ; (These are things we can do Solr stats on)
