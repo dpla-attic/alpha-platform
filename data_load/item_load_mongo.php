@@ -121,7 +121,6 @@ function index_items() {
 	    
 	    // Release memory
         unset ($solr_documents);
-        //$solr->commit();
     }
 		
     $solr->commit();

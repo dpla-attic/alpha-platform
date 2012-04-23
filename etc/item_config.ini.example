@@ -7,36 +7,15 @@ solr_path = /solr/item
 ; This should be the list of all valid fields in the Solr instance
 ; (We do this so that we can print error messages)
 valid_params[] = id
-valid_params[] = title
-valid_params[] = title_sort
-valid_params[] = creator
-valid_params[] = publisher
-valid_params[] = date
-valid_params[] = format
-valid_params[] = language
-valid_params[] = page_count
-valid_params[] = height
-valid_params[] = subject
-valid_params[] = description
-valid_params[] = call_num
-valid_params[] = id_inst
-valid_params[] = id_isbn
-valid_params[] = id_lccn
-valid_params[] = id_oclc
-valid_params[] = content_link
-valid_params[] = relation
-valid_params[] = rights
-valid_params[] = checkouts
-valid_params[] = data_source
-valid_params[] = dataset_tag
-valid_params[] = title_exact
-valid_params[] = creator_exact
-valid_params[] = subject_exact
-valid_params[] = title_keyword
-valid_params[] = creator_keyword
-valid_params[] = subject_keyword
-valid_params[] = note_keyword
-valid_params[] = keyword
+valid_params[] = dpla.creator
+valid_params[] = dpla.publisher
+valid_params[] = dpla.format
+valid_params[] = dpla.language
+valid_params[] = dpla.page_count
+valid_params[] = dpla.subject
+valid_params[] = dpla.data_source
+valid_params[] = dpla.resource_type
+valid_params[] = dpla.dataset_tag
 
 ;Multi-valued fields
 mulval_fields[] = creator
