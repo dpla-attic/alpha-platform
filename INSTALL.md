@@ -27,8 +27,8 @@ wget http://launchpad.net/libmemcached/1.0/0.52/+download/libmemcached-0.52.tar.
 tar xvfz libmemcached-0.52.tar.gz
 cd libmemcached-0.52
 ./configure
-./make
-./make install
+make
+make install
 ````
 
 We'll also need the php-memcached extension (http://pecl.php.net/package/memcached).
